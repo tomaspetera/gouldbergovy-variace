@@ -30,6 +30,12 @@ BASE_W = 1200
 HD_W = 3000
 THUMB_W = 240
 
+# Proklikávací místa v letáku: text na dané straně se v obou jazycích najde a udělá z něj odkaz.
+# Odkazy vložené přímo do PDF (např. v Affinity) se převezmou automaticky.
+LINKS = [
+    {"page": 6, "text": "Art Babayants", "url": "https://www.artbabayants.ca"},
+]
+
 
 def render(page, width):
     zoom = width / page.rect.width
@@ -78,6 +84,40 @@ def find_cta_gap(page, min_gap=0.07):
     return {"y": round((top + bottom) / 2, 4), "h": round(bottom - top, 4)}
 
 
+def link_area(page, rect, url, label):
+    """Oblast odkazu jako podíl rozměrů stránky."""
+    W, H = page.rect.width, page.rect.height
+    return {
+        "page": page.number + 1,
+        "x": round(rect.x0 / W, 4), "y": round(rect.y0 / H, 4),
+        "w": round(rect.width / W, 4), "h": round(rect.height / H, 4),
+        "url": url, "label": label,
+    }
+
+
+def find_links(doc, lang):
+    links = []
+    for cfg in LINKS:
+        page = doc[cfg["page"] - 1]
+        hits = page.search_for(cfg["text"])
+        if not hits:
+            print(f"  {lang} POZOR: text „{cfg['text']}“ na straně {cfg['page']} nenalezen, odkaz vynechán")
+            continue
+        # jeden výskyt může přijít rozdělený na víc kusů (slova) – spojíme kusy na stejném řádku
+        area = hits[0]
+        for r in hits[1:]:
+            if abs(r.y0 - area.y0) < 2 and r.x0 - area.x1 < page.rect.width * 0.03:
+                area |= r
+        links.append(link_area(page, area, cfg["url"], cfg["text"]))
+        print(f"  {lang} odkaz „{cfg['text']}“ na straně {cfg['page']} → {cfg['url']}")
+    for page in doc:
+        for l in page.get_links():
+            if l.get("uri"):
+                links.append(link_area(page, l["from"], l["uri"], l["uri"]))
+                print(f"  {lang} odkaz z PDF na straně {page.number + 1} → {l['uri']}")
+    return links
+
+
 def build(lang, pdf_path):
     doc = pymupdf.open(pdf_path)
     out = ROOT / "pages" / lang
@@ -106,7 +146,10 @@ def build(lang, pdf_path):
         print(f"  {lang} na poslední straně není volné místo, tlačítko bude pod letákem")
 
     first = doc[0].rect
-    return {"pages": doc.page_count, "w": first.width, "h": first.height, "text": texts, "cta": cta}
+    return {
+        "pages": doc.page_count, "w": first.width, "h": first.height,
+        "text": texts, "cta": cta, "links": find_links(doc, lang),
+    }
 
 
 def build_og_image(pdf_path):

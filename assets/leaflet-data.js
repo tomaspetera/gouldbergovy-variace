@@ -49,9 +49,8 @@ window.LEAFLET = {
     ],
     [
      "Tvůrčí tým",
-     "Eliška Benešová je česká tanečnice, lektorka, tvůrkyně a performerka. Tanec studovala na Taneční konzervatoři hl. m. Prahy, Konzervatoři Duncan centre a v zahraničí na Escuela profesional de danza de Mazatlán v Mexiku. V roce 2023 založila spolek 23 Poems Collective z. s. za účelem podpory mezinárodní a multižánrové spolupráce. Dlouhodobě působí jako pedagog na Konzervatoři Duncan centre a je certifikovanou lektorkou mezinárodního pohybového vzdělávacího programu Fighting Monkey, v jehož rámci vede dílny pro odbornou i laickou veřejnost v ČR i v zahraničí.",
-     "Radka Hanáková je českokanadská koncertní klavíristka, komorní hráčka a pedagožka. Vystudovala HAMU v Praze pod vedením prof. Miroslava Langera, později byla přijata do prestižního programu Artist Diploma na Glenn Gould School, a získala doktorát na University of Toronto pod vedením prof. Jamieho Parkera a v roce 2020 vydala své debutové sólové album věnované právě Bachovým",
-     "Goldbergovým variacím.",
+     "Eliška Benešová je česká tanečnice, lektorka, tvůrkyně a performerka. Tanec studovala na Taneční konzervatoři hl. m. Prahy, Konzervatoři Duncan centre a v zahraničí na Escuela profesional de danza de Mazatlán v Mexiku. V roce 2023 založila spolek 23 Poems Collective z. s. za účelem podpory mezinárodní a multižánrové spolupráce. Dlouhodobě působí jako pedagog na Konzervatoři Duncan centre a je certifikovanou lektorkou mezinárodního pohybového vzdělávacího programu Fighting Monkey.",
+     "Radka Hanáková je českokanadská koncertní klavíristka, komorní hráčka a pedagožka. Vystudovala HAMU v Praze pod vedením prof. Miroslava Langera, později byla přijata do prestižního programu Artist Diploma na Glenn Gould School, a získala doktorát na University of Toronto pod vedením prof. Jamieho Parkera a v roce 2020 vydala své debutové sólové album věnované právě Bachovým Goldbergovým variacím.",
      "Art Babayants je kanadský divadelní režisér, umělec, pedagog a akademik arménského původu. Je držitelem titulu PhD. v oboru Drama, Theatre and Performance Studies na University of Toronto a je uměleckým šéfem nezávislé divadelní společnosti Toronto Laboratory Theatre. Ve své umělecké a akademické činnosti se specializuje na současné hudební divadlo, vícejazyčnou dramaturgii a propojení hereckých technik. Je autorem a režisérem řady oceňovaných mezinárodních divadelních projektů."
     ],
     [
@@ -72,7 +71,18 @@ window.LEAFLET = {
    "cta": {
     "y": 0.7095,
     "h": 0.1006
-   }
+   },
+   "links": [
+    {
+     "page": 6,
+     "x": 0.5301,
+     "y": 0.1501,
+     "w": 0.1877,
+     "h": 0.0205,
+     "url": "https://www.artbabayants.ca",
+     "label": "Art Babayants"
+    }
+   ]
   },
   "en": {
    "pages": 7,
@@ -107,11 +117,11 @@ window.LEAFLET = {
      "Anyway, why would anyone want to mess with an already perfect piece of classical music and litter it with movement, lights, props, etc. As if Bach's masterpiece were not quite enough. Why go off the beaten track?",
      "In all honesty, we did start with ultimate respect for Bach and his music. We are not there to re-interpret or reinvent Bach. Rather, we are",
      "there to allow Bach to unlock our own eccentricity, our own imagination, our own creative freedom and our own potential for connection with another artist, dead or alive. It took weeks, no, months of discussions, improvisations, rehearsals to find our own vision of Bach's music. We are presenting our first draft of a show to our first public. In fact, this show will always be a draft because we are still letting Bach push us in new directions.",
-     "For now, the way the piece came to life with three intersecting layers. The first one is obvious. It's a story about a precocious page-"
+     "For now, the piece is coming to life through three intersecting layers. The first one is obvious. It's a story about a precocious page-"
     ],
     [
      "turner and a serious classical pianist. The story seems simple and, hopefully, humourous too. Why humourous? Because we ourselves felt there was a lot of playful humour in Bach and even more humour and playfulness in how Glenn Gould interpreted the famous Variations.",
-     "The next layer is a metaphorical one. This one is a lot more open to interpretation and everyone is welcome to build their own story or even their own mythology around the stage images and sounds that we have put together. Everyone is welcome to rely on their own associations, life histories, fears and joys while engaging with the performance. Some will probably relate to the themes of extreme solitude, creative self-torture, overwhelming nightmarish obsessions that all creative souls experience. Others would prefer to focus on the idea of kindness and collaboration in the time of psychological difficulty: when someone goes rogue, we should have the capacity to accept them with kindness and curiosity, just like the pianist in our piece accepts",
+     "The next layer is a metaphorical one. This one is a lot more open to interpretation and everyone is welcome to build their own story or even their own mythology around the stage images and sounds that we have put together. Everyone is welcome to rely on their own associations, life histories, fears and joys while engaging with the performance. Some will probably relate to the themes of extreme solitude, creative self-torture and overwhelming nightmarish obsessions that all creative souls experience. Others would prefer to focus on the idea of kindness and collaboration in the time of psychological difficulty: when someone goes rogue, we should have the capacity to accept them with kindness and curiosity, just like the pianist in our piece accepts",
      "the page-turner. This in turn leads to new discoveries, inventions and collaborations - and, more importantly, collective joy.",
      "The third and last layer is there specifically for nerds and nerds only, especially Glenn Gould nerds. But if you miss this layer, that wouldn't be a problem. It's the icing on top.",
      "Naturally, we remain open to YOUR own visions of the three layers, especially the metaphorical one. In the end, no one owns the 'correct' interpretation of Bach, although some very serious people claim that they do.",
@@ -121,9 +131,8 @@ window.LEAFLET = {
     ],
     [
      "Creative Team",
-     "Eliška Benešová is a Czech dancer, educator, creator, and performer. She studied dance at the Prague Conservatory of Dance, the Duncan Centre Conservatory, and abroad at the Escuela Profesional de Danza de Mazatlán in Mexico. In 2023, she founded 23 Poems Collective z. s. with the aim of supporting international and multidisciplinary collaboration. She has been working as a teacher at the Duncan Centre Conservatory for many years and is a certified instructor of the international movement education programme Fighting Monkey, within which she leads workshops for both professional and general audiences in the Czech Republic and abroad.",
-     "Radka Hanáková is a Czech- Canadian concert pianist, chamber musician, and educator. She studied at the Academy of Performing Arts in Prague (HAMU) under Prof. Miroslav Langer, and later was admitted to the prestigious Artist Diploma programme at the Glenn Gould School. She received her doctorate from the University of Toronto under the supervision of Prof.",
-     "Jamie Parker, and in 2020 released her debut solo album dedicated to Bach’s Goldberg Variations.",
+     "Eliška Benešová is a Czech dancer, educator, creator, and performer. She studied dance at the Prague Conservatory of Dance, the Duncan Centre Conservatory, and abroad at the Escuela Profesional de Danza de Mazatlán in Mexico. In 2023, she founded 23 Poems Collective z. s. with the aim of supporting international and multidisciplinary collaboration. She has been working as a teacher at the Duncan Centre Conservatory for many years and is a certified instructor of the international movement education programme Fighting Monkey.",
+     "Radka Hanáková is a Czech- Canadian concert pianist, chamber musician, and educator. She studied at the Academy of Performing Arts in Prague (HAMU) under Prof. Miroslav Langer, and later was admitted to the prestigious Artist Diploma programme at the Glenn Gould School. She received her doctorate from the University of Toronto under the supervision of Prof. Jamie Parker, and in 2020 released her debut solo album dedicated to Bach’s Goldberg Variations.",
      "Art Babayants is a Canadian theatre director, artist, educator, and academic of Armenian heritage. He holds a PhD in Drama, Theatre and Performance Studies from the University of Toronto and is the Artistic Director of the independent theatre company Toronto Laboratory Theatre. His artistic and academic work focuses on contemporary music theatre, multilingual dramaturgy, and the integration of acting techniques. He is the creator and director of numerous internationally acclaimed theatre projects."
     ],
     [
@@ -141,7 +150,18 @@ window.LEAFLET = {
    "cta": {
     "y": 0.6989,
     "h": 0.1197
-   }
+   },
+   "links": [
+    {
+     "page": 6,
+     "x": 0.52,
+     "y": 0.1703,
+     "w": 0.1778,
+     "h": 0.0205,
+     "url": "https://www.artbabayants.ca",
+     "label": "Art Babayants"
+    }
+   ]
   }
  },
  "pages": 7,

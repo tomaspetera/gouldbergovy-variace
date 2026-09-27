@@ -309,7 +309,37 @@
     }));
     updateUI();
     placeCta();
+    placeLinks();
     scheduleHD();
+  }
+
+  // Proklikávací místa v letáku (např. jméno s odkazem na web), polohu najde build skript.
+  function placeLinks() {
+    clearLinks();
+    const v = S.views[S.vi];
+    const slots = S.mode === "spread" ? [[slotL, v.l], [slotR, v.r]] : [[slotR, v.r]];
+    const links = D.langs[S.lang].links || [];
+    slots.forEach(([slot, page]) => {
+      links.filter((l) => l.page === page).forEach((l) => {
+        const a = document.createElement("a");
+        const host = l.url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
+        a.className = "hotspot";
+        a.href = l.url;
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.title = host;
+        a.setAttribute("aria-label", `${l.label} – ${host}`);
+        a.style.left = l.x * 100 + "%";
+        a.style.top = l.y * 100 + "%";
+        a.style.width = l.w * 100 + "%";
+        a.style.height = l.h * 100 + "%";
+        slot.appendChild(a);
+      });
+    });
+  }
+
+  function clearLinks() {
+    $$(".hotspot", book).forEach((a) => a.remove());
   }
 
   // Tlačítko na 23poems.com: na poslední straně ve volném místě, které našel build skript;
@@ -353,6 +383,7 @@
     leafToken++;
     leaf.classList.remove("on");
     cta.classList.remove("show");
+    clearLinks();
     fill(faceF, f.spec.front);
     fill(faceB, f.spec.back);
     // Počkáme na dekódování obrázků, ať list ani strany pod ním neprobliknou bíle.
