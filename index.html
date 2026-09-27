@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#161618">
+  <title>Gouldbergovy variace · 23 Poems</title>
+  <meta name="description" content="Online leták k představení Gouldbergovy variace (23 Poems Collective). Premiéra 29. 9. 2026 v 19:30, Divadlo Inspirace, Praha.">
+
+  <!-- Náhled při sdílení odkazu (při přesunu na jinou adresu upravte og:url a og:image). -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tomaspetera.github.io/gouldbergovy-variace/">
+  <meta property="og:title" content="Gouldbergovy variace · 23 Poems">
+  <meta property="og:description" content="Online leták k představení. Premiéra 29. 9. 2026, Divadlo Inspirace, Praha.">
+  <meta property="og:image" content="https://tomaspetera.github.io/gouldbergovy-variace/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="pages/cz/thumb/1.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/flipbook.css">
+</head>
+<body>
+  <div class="app" id="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-title" data-i18n="brand">Gouldbergovy variace</span>
+        <span class="brand-sub">23 Poems</span>
+      </div>
+      <div class="actions">
+        <div class="lang" role="group" aria-label="Jazyk / Language">
+          <button type="button" data-lang="cz" aria-pressed="true">CZ</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="icon-btn" id="download" href="pdf/Online_letak_GV_CZ.pdf" download data-i18n-label="download">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+        </a>
+        <button type="button" class="icon-btn" id="fullscreen" data-i18n-label="fullscreen">
+          <svg class="fs-enter" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+          <svg class="fs-exit" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="stage" id="stage" data-i18n-label="leaflet">
+      <div class="zoom" id="zoom">
+        <div class="book single" id="book">
+          <div class="page left"><img class="lo" alt="" draggable="false"><img class="hi" alt="" draggable="false"><div class="cast"></div></div>
+          <div class="page right"><img class="lo" alt="" draggable="false"><img class="hi" alt="" draggable="false"><div class="cast"></div>
+            <!-- Tlačítko na web – skript ho umístí do volného místa na poslední straně. -->
+            <a class="cta" id="cta" href="https://23poems.com/" target="_blank" rel="noopener">
+              <span data-i18n="cta">Navštivte 23poems.com</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
+          </div>
+          <div class="leaf" aria-hidden="true">
+            <div class="face front"><img class="lo" alt="" draggable="false"><img class="hi" alt="" draggable="false"><div class="shade"></div></div>
+            <div class="face back"><img class="lo" alt="" draggable="false"><img class="hi" alt="" draggable="false"><div class="shade"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="nav prev" data-go="-1" data-i18n-label="prev">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button" class="nav next" data-go="1" data-i18n-label="next">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+
+      <div class="hint" id="hint" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M14 10l6-6M20 4h-5M20 4v5M10 14l-6 6M4 20h5M4 20v-5"/></svg>
+        <span id="hintText"></span>
+      </div>
+    </main>
+
+    <footer class="bottombar">
+      <div class="bar-left">
+        <button type="button" class="icon-btn" id="thumbsBtn" data-i18n-label="thumbs" aria-haspopup="dialog">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>
+        </button>
+      </div>
+      <div class="pager">
+        <button type="button" class="icon-btn" data-go="-1" data-i18n-label="prev">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <span class="page-label" id="pageLabel" aria-live="polite">1 / 7</span>
+        <button type="button" class="icon-btn" data-go="1" data-i18n-label="next">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+      <div class="bar-right">
+        <button type="button" class="icon-btn" id="zoomOut" data-i18n-label="zoomOut">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M8 11h6"/></svg>
+        </button>
+        <button type="button" class="icon-btn" id="zoomIn" data-i18n-label="zoomIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg>
+        </button>
+      </div>
+    </footer>
+
+    <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" inert>
+      <div class="sheet-panel">
+        <div class="sheet-head">
+          <span id="sheetTitle" data-i18n="thumbs">Přehled stran</span>
+          <button type="button" class="icon-btn" id="sheetClose" data-i18n-label="close">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          </button>
+        </div>
+        <div class="thumbs" id="thumbs"></div>
+      </div>
+    </div>
+
+    <!-- Text letáku pro čtečky obrazovky a vyhledávače (plní se ze skriptu). -->
+    <section class="sr-only" id="srText"></section>
+
+    <noscript>
+      <div class="noscript">
+        <a href="pdf/Online_letak_GV_CZ.pdf">Leták ke stažení (PDF, CZ)</a> ·
+        <a href="pdf/Online_letak_GV_EN.pdf">Leaflet download (PDF, EN)</a>
+      </div>
+    </noscript>
+  </div>
+
+  <script src="assets/leaflet-data.js"></script>
+  <script src="assets/flipbook.js"></script>
+</body>
+</html>
