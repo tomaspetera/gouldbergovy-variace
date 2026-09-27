@@ -1,6 +1,6 @@
 # Online leták – Gouldbergovy variace (CZ / EN)
 
-Běží na **https://tomaspetera.github.io/gouldbergovy-variace/** (GitHub Pages z větve `main`).
+Běží na **https://tomaspetera.cz/gouldbergovy-variace/** (GitHub Pages z větve `main`).
 
 Úpravy nasadíte tak, že je commitnete a pushnete do `main`, GitHub web během minuty aktualizuje:
 
